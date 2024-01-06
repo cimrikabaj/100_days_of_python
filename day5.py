@@ -58,4 +58,57 @@
 #         sum += i
 # print(sum)
 
-#no7
+#FizzBuzz
+#a game where when the number is divisible by 3 then instead of printing the number it should print"Fizz" and when it is divisible by 5 then it should print "buzz" anf if both then it should print "fizzbuzz"
+# for i in range(1,50):
+#     if i % 3==0:
+#         print("Fizz")
+#     elif i % 5==0:
+#         print("Buzz")
+#     elif i%3==0 & i%5==0:
+#         print("Fizz Buzz")
+#     else:
+#         print(i)
+
+
+#pypassword generator
+import random
+letter=['a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p',
+        'q','r','s','t','u','v','w','x','y','z','A','B','C','D','E','F','G',
+        'H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z']
+numbers=['0','1','2','3','4','5','6','7','8','9']
+symbols=['!', '#', '$', '%', '&', '(', ')','*','+']
+print("Welcome to the PyPassword Generator!!\n")
+no_of_letter=int(input("How many letters would you like in your password?\n"))
+no_of_symbol=int(input("How many symbols would you like?\n"))
+no_of_digit=int(input("How many numbers would you like?\n"))
+
+#eazy level=fghf^123
+# password=""
+# for char in range(1,no_of_letter+1):
+#     letterrandom= random.choice(letter)
+#     password+=letterrandom
+# for char in range(1,no_of_symbol+1):
+#     letterrandom= random.choice(symbols)
+#     password+=letterrandom
+# for char in range(1,no_of_digit+1):
+#     password+=random.choice(numbers)
+# print(password)
+# print(f"Here is your password:{password}")
+
+#hard level=g^2jk8&
+password=""
+password_list=[]
+for char in range(1,no_of_letter+1):
+    password_list.append(random.choice(letter))
+for char in range(1,no_of_symbol+1):
+    password_list.append(random.choice(symbols))
+for char in range(1,no_of_digit+1):
+    password_list.append(random.choice(numbers))
+print(password_list)
+random.shuffle(password_list)
+print(password_list)
+
+for i in password_list:
+    password+=i
+print(f"Here is your password:{password}")
